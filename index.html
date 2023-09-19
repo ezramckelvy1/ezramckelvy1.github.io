@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>who's Website</title>
+  <style>
+    body {
+      background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      font-family: sans-serif;
+    }
+
+    #all-contents {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    nav {
+      background: rgb(17, 2, 224);
+      margin: 0 auto;
+      display: flex;
+      padding: 10px;
+    }
+
+    nav h1 {
+      display: flex;
+      align-items: center;
+      color: rgb(0, 0, 0);
+      flex: 1;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-image: none;
+    }
+
+    nav li {
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #055879
+    }
+
+    main {
+      background-image: url(https://images.jifo.co/148514131_1687296292300.png);
+      display: flex;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 100vh;
+      animation: ship;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes ship {
+      0% {
+        background-position-x: 14%;
+        background-position-y: 0vh;
+      }
+
+      40%{
+        
+        background-image: url(https://images.jifo.co/148514131_1687296292300.png);
+      }
+      50% {
+
+        background-position-x: 0%;
+        background-position-y: 80vh;
+      }
+
+      51% {
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/009/374/805/small/fire-explode-design-free-png.png");
+      }
+
+      99% {
+        background-position-x: -100%;
+        background-position-y: 0vh;
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/009/374/805/small/fire-explode-design-free-png.png");
+        background-size: 100vh 100vw;
+      }
+
+      100% {
+        background-image: url(https://images.jifo.co/148514131_1687296292300.png);
+      }
+    }
+
+    .sidebar {
+      margin-right: 25px;
+      padding: 10px;
+    }
+
+    .sidebar img {
+      width: 200px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 15px;
+
+    }
+
+    h2,
+    h3 {
+      margin: 0px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="all-contents">
+    <nav>
+      <h1>Ezra's Website</h1>
+      <ui>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li>
+          <a href="examples.html">Examples</a>
+        </li>
+      </ui>
+    </nav>
+
+
+    <main>
+      <div class="sidebar">
+        <img src="https://resource.logitech.com/content/dam/gaming/en/products/f710/f710-gallery-1.png">
+      </div>
+
+      <div class="content">
+        <h2>Ezra Mckelvy</h2>
+        <p>Student at Fountainbleu highschool</p>
+        <div class="interests">
+          <h3>Interests</h3>
+          <ul>
+            <li>hmmmm</li>
+            <li>maybe</li>
+            <li>i dont know</li>
+
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
