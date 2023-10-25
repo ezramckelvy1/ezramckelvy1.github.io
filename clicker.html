@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      font-family: sans-serif;
+    }
+
+    #score {
+      font-size: 40px;
+      text-align: center;
+      background-color: rgb(168, 0, 219);
+      width: 150px;
+      margin: auto;
+    }
+
+    img {
+      background-color: rgb(0, 0, 0);
+
+      padding: 5px;
+      width: 150px;
+    }
+
+    #center {
+      position: relative;
+      left: 550px
+    }
+
+    main {
+      background-image: url(https://images.jifo.co/148514131_1687296292300.png);
+      display: flex;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 100vh;
+    }
+
+    body {
+      background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+      color: rgb(255, 255, 255);
+      padding: 10px;
+      font-family: sans-serif;
+    }
+
+    #all-contents {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    nav {
+      background: rgb(17, 2, 224);
+      margin: 0 auto;
+      display: flex;
+      padding: 10px;
+    }
+
+    nav h1 {
+      display: flex;
+      align-items: center;
+      color: rgb(0, 0, 0);
+      flex: 1;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-image: none;
+    }
+
+    nav li {
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #055879
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="all-contents">
+
+    <nav>
+      <h1>clickergame</h1>
+      <ui>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li>
+          <a href="examples.html">Examples</a>
+        </li>
+      </ui>
+    </nav>
+    <p id="score">score=0</p>
+
+    <main>
+
+    </main>
+
+</body>
+</div>
+
+</html>
+<script>
+  document.addEventListener("click", addScore)
+  function addScore() {
+    score = score * 1
+    console.log(score)
+
+  }
+  var score = 0
+
+</script>
