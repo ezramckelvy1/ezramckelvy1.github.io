@@ -2,120 +2,241 @@
 <html>
 
 <head>
-  <style>
-    body {
-      background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
-      color: rgb(255, 255, 255);
-      padding: 10px;
-      font-family: sans-serif;
-    }
+   <style>
+      body {
+       background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+       color: rgb(255, 255, 255);
+       padding: 10px;
+       font-family: sans-serif;
+       margin-left:-200px;
+     }
+     #score {
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(168, 0, 219);
+       width: 150px;
+       margin: auto;
+     }
+     #scoreW {
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(168, 0, 219);
+       width: 150px;
+       margin: auto;
+     }
+     img {
+        margin-top: -100px;
+       height: 600px;
+     }
+      #center {
+       position: relative;
+        left: 550px
+     }
+      body {
+        background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        font-family: sans-serif;
+      }
+      #all-contents {
+       max-width: 800px;
+        margin: auto;
+      }
+      nav {
+        background: rgb(162, 157, 241);
+       margin: 0 auto;
+       display: flex;
+       padding: 10px;
+     }
+     nav h1 {
+       display: flex;
+       align-items: center;
+        color: rgb(0, 0, 0);
+       flex: 1;
+       margin: 0;
+     }
+     nav ul {
+       list-style-image: none;
+     }
+     nav li {
+       display: inline-block;
+       padding: 0 10px;
+     }
+     nav a {
+       text-decoration: none;
+       color: #055879
+     }
+     #upBox{
+       background: rgb(255, 196, 0);
+       width:330px;
+       height:auto;
+       position:absolute;
+       margin-left:800px;
+       margin-top:-142px;
+     }
+      #upgrade{
+        position:absolute;
+        font-size: 40px;
+        text-align: center;
+        background-color: rgb(168, 0, 219);
+        width: 150px;
+        height:auto;
+        color:black;
+        margin-top:-40px;
+        margin-left:10px;
+        
+      }
+      #cost{
+      
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(168, 0, 219);
+       width: 150px;
+       margin-left:10px;
+       margin-top:-40px; 
+     }
+     #upW{
 
-    #score {
-      font-size: 40px;
-      text-align: center;
-      background-color: rgb(168, 0, 219);
-      width: 150px;
-      margin: auto;
-    }
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(168, 0, 219);
+       width: 150px;
+       margin-top:auto;
+       margin-left:10px;
+     }
+     #upC{
 
-    img {
-      background-color: rgb(0, 0, 0);
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(15, 0, 219);
+       width: 150px;
+        margin-top:50px;
+        margin-left:10px;
+      }
+      #upgradeTwo{
+        position:absolute;
+        font-size: 40px;
+        text-align: center;
+        background-color: rgb(168, 0, 219);
+        width: 150px;
+        height:auto;
+        color:black;
+        margin-top:-40px;
+        margin-left:170px;
+        
+      }
+      #costTwo{
+      
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(168, 0, 219);
+       width: 150px;
+       margin-right: auto;
+       margin-top:-40px; 
+       margin-left:170px;
+     }
+     #upWTwo{
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(168, 0, 219);
+       width: 150px;
+       margin-top:auto;
+       margin-left:170px;
+     }
+     #upCTwo{
 
-      padding: 5px;
-      width: 150px;
-    }
+       font-size: 40px;
+       text-align: center;
+       background-color: rgb(15, 0, 219);
+       width: 150px;
+        margin-top:50px;
+        margin-left:170px;
+      }
+      #upTwo{
+        margin-top: -228px;
+      }
+    </style>
+  </head>
 
-    #center {
-      position: relative;
-      left: 550px
-    }
+  <body>
 
-    main {
-      background-image: url(https://images.jifo.co/148514131_1687296292300.png);
-      display: flex;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      height: 100vh;
-    }
+    <div id="all-contents"> 
 
-    body {
-      background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
-      color: rgb(255, 255, 255);
-      padding: 10px;
-      font-family: sans-serif;
-    }
-
-    #all-contents {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    nav {
-      background: rgb(17, 2, 224);
-      margin: 0 auto;
-      display: flex;
-      padding: 10px;
-    }
-
-    nav h1 {
-      display: flex;
-      align-items: center;
-      color: rgb(0, 0, 0);
-      flex: 1;
-      margin: 0;
-    }
-
-    nav ul {
-      list-style-image: none;
-    }
-
-    nav li {
-      display: inline-block;
-      padding: 0 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #055879
-    }
-  </style>
-</head>
-
-<body>
-
-  <div id="all-contents">
-
-    <nav>
-      <h1>clickergame</h1>
-      <ui>
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="portfolio.html">Portfolio</a>
-        </li>
-        <li>
-          <a href="examples.html">Examples</a>
-        </li>
-      </ui>
-    </nav>
-    <p id="score">score=0</p>
-
-    <main>
-
-    </main>
-
-</body>
-</div>
-
+     <nav>
+       <h1>TitanClicker</h1>
+         <ui>
+           <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+             <a href="portfolio.html">Portfolio</a>
+          </li>
+          <li>
+            <a href="examples.html">Examples</a>
+          </li>
+         </ui>
+     </nav>
+     <div>
+        <p id="scoreW">score</p>
+       <p id="score">0</p>
+     </div>
+      <div id="upBox">
+        <div id="up" >
+         <p id="upW">upgrade</p>
+         <button id="upgrade">0</button>
+         <p id="upC">cost</p>
+         <p id="cost">5</p>
+       </div>
+       <div id="upTwo" >
+          <p id="upWTwo">clicks</p>
+         <button id="upgradeTwo">0</button>
+         <p id="upCTwo">cost</p>
+         <p id="costTwo">10</p>
+       </div>
+      </div>
+      <main >
+       <img id="img" draggable="false" src="https://images.jifo.co/148514131_1687296292300.png">
+     </main>
+    </div>
+  </body>
 </html>
 <script>
-  document.addEventListener("click", addScore)
+  document.getElementById("img").addEventListener("click", addScore)
+  document.getElementById("upgrade").addEventListener("click",upgrade)
+  document.getElementById("upgradeTwo").addEventListener("click",upgradeTwo)
   function addScore() {
-    score = score * 1
+    score = score+click
     console.log(score)
-
+    document.getElementById("score").innerText=score
+  }
+  function upgrade(){
+   if(score>=cost){score=score-cost
+     cost=cost*2
+      click=click+1
+      console.log(cost)
+      document.getElementById("cost").innerText=cost
+    }
+  }
+  function upgradeTwo(){
+   if(score>=costTwo){score=score-costTwo
+      costTwo=costTwo*2
+      console.log(costTwo)
+     document.getElementById("costTwo").innerText=costTwo
+      setInterval(timeUp, 500) 
+      console.log(score)
+      document.getElementById("score").innerText=score
+      speed=speed+1
+   }
+    }
+   
+  function timeUp() {
+    score = score + speed
+    document.getElementById("score").innerText = score
   }
   var score = 0
+  var cost=5
+  var click=1
+  var costTwo=10
+  var speed=0
 
 </script>
