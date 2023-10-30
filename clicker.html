@@ -5,7 +5,7 @@
    <style>
       body {
        background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
-       color: rgb(255, 255, 255);
+     
        padding: 10px;
        font-family: sans-serif;
        margin-left:-200px;
@@ -13,19 +13,19 @@
      #score {
        font-size: 40px;
        text-align: center;
-       background-color: rgb(168, 0, 219);
-       width: 150px;
+       width: fit-content;
        margin: auto;
      }
      #scoreW {
        font-size: 40px;
        text-align: center;
-       background-color: rgb(168, 0, 219);
-       width: 150px;
+      
+       width: fit-content;
        margin: auto;
      }
      img {
         margin-top: -100px;
+        margin-left:300px;
        height: 600px;
      }
       #center {
@@ -34,16 +34,19 @@
      }
       body {
         background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
-        color: rgb(255, 255, 255);
+        color: rgb(250, 248, 248);
         padding: 10px;
         font-family: sans-serif;
       }
       #all-contents {
-       max-width: 800px;
+       max-width: 900px;
         margin: auto;
       }
       nav {
-        background: rgb(162, 157, 241);
+        background:skyblue;
+        border-style: solid;
+      border-width:5px;
+      border-color:darkblue;
        margin: 0 auto;
        display: flex;
        padding: 10px;
@@ -64,21 +67,35 @@
      }
      nav a {
        text-decoration: none;
-       color: #055879
+       color: #000000
      }
      #upBox{
-       background: rgb(255, 196, 0);
+       background-image:url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg") ;
        width:330px;
-       height:auto;
+       height:255px;
        position:absolute;
-       margin-left:800px;
-       margin-top:-142px;
+       margin-left:1215px;
+       margin-top:-152px;
+       border-style: solid;
+      border-width:5px;
+      border-color:darkblue;
+     }
+     #upTab{
+      background-color:skyblue;
+      height:50px;
+      font-size: 40px;
+      margin-top:-40px;
+      color:black;
+      text-align: center;
+      border-bottom:solid;
+      border-width:5px;
+      border-color:darkblue;
      }
       #upgrade{
         position:absolute;
         font-size: 40px;
         text-align: center;
-        background-color: rgb(168, 0, 219);
+        background-color: skyblue;
         width: 150px;
         height:auto;
         color:black;
@@ -90,8 +107,9 @@
       
        font-size: 40px;
        text-align: center;
-       background-color: rgb(168, 0, 219);
+       
        width: 150px;
+       height: fit-content;
        margin-left:10px;
        margin-top:-40px; 
      }
@@ -99,7 +117,7 @@
 
        font-size: 40px;
        text-align: center;
-       background-color: rgb(168, 0, 219);
+       
        width: 150px;
        margin-top:auto;
        margin-left:10px;
@@ -108,7 +126,7 @@
 
        font-size: 40px;
        text-align: center;
-       background-color: rgb(15, 0, 219);
+       
        width: 150px;
         margin-top:50px;
         margin-left:10px;
@@ -117,7 +135,7 @@
         position:absolute;
         font-size: 40px;
         text-align: center;
-        background-color: rgb(168, 0, 219);
+        background-color:skyblue;;
         width: 150px;
         height:auto;
         color:black;
@@ -129,8 +147,9 @@
       
        font-size: 40px;
        text-align: center;
-       background-color: rgb(168, 0, 219);
+       
        width: 150px;
+       height: fit-content;
        margin-right: auto;
        margin-top:-40px; 
        margin-left:170px;
@@ -138,7 +157,7 @@
      #upWTwo{
        font-size: 40px;
        text-align: center;
-       background-color: rgb(168, 0, 219);
+     
        width: 150px;
        margin-top:auto;
        margin-left:170px;
@@ -147,7 +166,7 @@
 
        font-size: 40px;
        text-align: center;
-       background-color: rgb(15, 0, 219);
+      
        width: 150px;
         margin-top:50px;
         margin-left:170px;
@@ -176,28 +195,32 @@
           </li>
          </ui>
      </nav>
+    </div>
      <div>
-        <p id="scoreW">score</p>
+        <p id="scoreW">Tiatans</p>
        <p id="score">0</p>
      </div>
-      <div id="upBox">
-        <div id="up" >
-         <p id="upW">upgrade</p>
-         <button id="upgrade">0</button>
-         <p id="upC">cost</p>
-         <p id="cost">5</p>
-       </div>
-       <div id="upTwo" >
-          <p id="upWTwo">clicks</p>
-         <button id="upgradeTwo">0</button>
-         <p id="upCTwo">cost</p>
-         <p id="costTwo">10</p>
-       </div>
+        <div id="upBox">
+         <div id="upTab">
+           <p>Upgrades</p>
+         </div>
+         <div id="up" >
+            <p id="upW">CLicks</p>
+            <button id="upgrade">0</button>
+            <p id="upC">cost</p>
+            <p id="cost">5</p>
+          </div>
+          <div id="upTwo" >
+            <p id="upWTwo">Tiatans</p>
+            <button id="upgradeTwo">0</button>
+            <p id="upCTwo">cost</p>
+            <p id="costTwo">10</p>
+         </div>
       </div>
       <main >
-       <img id="img" draggable="false" src="https://images.jifo.co/148514131_1687296292300.png">
+       <img id="img" draggable="false" src="Titansub.png">
      </main>
-    </div>
+    
   </body>
 </html>
 <script>
