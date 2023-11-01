@@ -267,7 +267,7 @@ if(waldoC===false){
   waldoC=true
 if(awnser==="black"){
 alert("great you got it right")
-alert("yeah my shirt is black and if you say it isnt i will take this delicios points")
+alert("yeah my shirt is black and if you say it isnt i will take those tasty points")
 alert("here take the points")
 score=score+1000000000
 document.getElementById("score").innerText=score
@@ -340,11 +340,13 @@ document.getElementById("score").innerText=score
     speed=0
     upgradeO=0
     upgradeT=0
-     waldoC="chip"
     document.getElementById("cost").innerText=cost
     document.getElementById("upgrade").innerText=upgradeO
     document.getElementById("costTwo").innerText=costTwo
     document.getElementById("upgradeTwo").innerText=upgradeT
+    if (waldo===true){
+      waldo="chip"
+    }
     
  } 
  else{
@@ -356,12 +358,13 @@ document.getElementById("score").innerText=score
     speed=0
     upgradeO=0
     upgradeT=0
-    waldoC="chip"
-    document.getElementById("cost").innerText=cost
+   document.getElementById("cost").innerText=cost
     document.getElementById("upgrade").innerText=upgradeO
     document.getElementById("costTwo").innerText=costTwo
     document.getElementById("upgradeTwo").innerText=upgradeT
-    
+    if (waldo===true){
+      waldo="chip"
+    }
  }
   console.log(score)
  document.getElementById("score").innerText=score
