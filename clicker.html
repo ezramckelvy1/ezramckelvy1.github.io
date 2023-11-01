@@ -3,13 +3,30 @@
 
 <head>
    <style>
+    #chip {
+      margin-top:-1300px;
+    margin-left:1250px;
+    width:342px;
+    position: relative;
+    }
+    #waldo{
+      width:100px;
+      position:absolute;
+      margin-top:-740px;
+      margin-left:200px;
+      transform: rotate(180deg)
+    }
       body {
        background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
-     
+       -webkit-user-select:hidden;
+        -ms-user-select: none;
+        user-select: none;
        padding: 10px;
        font-family: sans-serif;
        margin-left:-200px;
-     }
+     background-repeat: no-repeat;
+      }
+     
      #score {
        font-size: 40px;
        text-align: center;
@@ -23,7 +40,7 @@
        width: fit-content;
        margin: auto;
      }
-     img {
+     #img {
         margin-top: -100px;
         margin-left:300px;
        height: 600px;
@@ -75,15 +92,15 @@
        width:330px;
        height:255px;
        position:absolute;
-       margin-left:1215px;
-       margin-top:-152px;
+       margin-left:1250px;
+       margin-top:-148px;
        border-style: solid;
       border-width:5px;
       border-color:darkblue;
      }
      #upTab{
       background-color:skyblue;
-      height:50px;
+      height:48px;
       font-size: 40px;
       margin-top:-40px;
       color:black;
@@ -189,7 +206,7 @@
             <a href="index.html">Home</a>
           </li>
           <li>
-             <a href="portfolio.html">Portfolio</a>
+             <a href="websites.html">Websites</a>
           </li>
           <li>
             <a href="examples.html">Examples</a>
@@ -201,7 +218,7 @@
         <p id="scoreW">Tiatans</p>
        <p id="score">0</p>
      </div>
-        <div id="upBox">
+       <div id="upBox">
          <div id="upTab">
            <p>Upgrades</p>
          </div>
@@ -216,25 +233,70 @@
             <button id="upgradeTwo">0</button>
             <p id="upCTwo">cost</p>
             <p id="costTwo">10</p>
-         </div>
-      </div>
-      <main >
-       <img id="img" draggable="false" src="Titansub.png">
+          </div>
+        </div>
+      <main>
+        <img id="img" draggable="false" src="Titansub.png">
      </main>
-    
-  </body>
+      <img id="chip"  draggable="false" src="https://media.tenor.com/SIpmtvnEsDIAAAAC/rotating-chips.gif">
+      <img id="waldo" draggable="false" src="https://images.genial.ly/5c704358c21bd04d3cddd063/799ddd6e-8186-4ef1-a089-5ab84ba25610.png">
+
+      
+    </body> 
 </html>
 <script>
   document.getElementById("img").addEventListener("click", addScore)
+  document.getElementById("chip").addEventListener("click", chipGod)
   document.getElementById("upgrade").addEventListener("click",upgrade)
   document.getElementById("upgradeTwo").addEventListener("click",upgradeTwo)
+  document.getElementById("waldo").addEventListener("click",found)
+  
   function addScore() {
     score = score+click
     console.log(score)
     document.getElementById("score").innerText=score
   }
+ function found(){
+ 
+if(waldoC===false){
+
+    alert("i see you found me")
+  alert("since this is the first time your talking to me here take some points")
+  alert("hey since you clicked on me i will give a one time chance to awnser my question")
+  var awnser=prompt("what is my shirt color")
+  waldoC=true
+if(awnser==="black"){
+alert("great you got it right")
+alert("yeah my shirt is black and if you say it isnt i will take this delicios points")
+alert("here take the points")
+score=score+1000000000
+document.getElementById("score").innerText=score
+}else{
+  alert("you got it wrong so no points for you")
+  alert("actually if you really thought the color of my shirt was "+awnser+" then you dont derserve points")
+  score=score-1000000000
+document.getElementById("score").innerText=score
+}
+} else 
+if(waldoC===true){
+ alert("hey you cant find my twice ive already been found ")
+ alert("but since you tried to click on me twice no points for you")
+ score=0
+ document.getElementById("score").innerText=score
+} else
+if(waldoC==="chip"){
+alert("do you think the lowsy chip god could help you ")
+alert("do you know who i am im waldo ")
+alert("im THE WALDO")
+alert("you know from WHerEs WalDO")
+alert("i AM SUPEIROR")
+score=-9999999999999999999
+document.getElementById("score").innerText=score
+}
+ }
   function upgrade(){
-   if(score>=cost){score=score-cost
+   if(score>=cost){
+    score=score-cost
      cost=cost*2
       click=click+1
       console.log(cost)
@@ -244,29 +306,72 @@
     }
   }
   function upgradeTwo(){
-   if(score>=costTwo){score=score-costTwo
+  
+  if(score>=costTwo){
+    score=score-costTwo
       costTwo=costTwo*2
       console.log(costTwo)
      document.getElementById("costTwo").innerText=costTwo
       setInterval(timeUp, 500) 
       console.log(score)
       document.getElementById("score").innerText=score
-      speed=speed+click
+     
       upgradeT=upgradeT+1
-      document.getElementById("upgradeTwo").innerText=upgradeT
+      document.getElementById("upgradeTwo").innerText=upgradeT  
+      speed=click
    }
     }
    
   function timeUp() {
+  
     score = score + speed
     document.getElementById("score").innerText = score
+    
   }
+  function chipGod() {
+    clearInterval()
+  var chip=confirm("Did  You  Touch  My  Chip")
+ if(chip===true){
+  alert("Dont Touch My Chip")
+  score = 0
+   cost=5
+    click=1
+    costTwo=10
+    speed=0
+    upgradeO=0
+    upgradeT=0
+     waldoC="chip"
+    document.getElementById("cost").innerText=cost
+    document.getElementById("upgrade").innerText=upgradeO
+    document.getElementById("costTwo").innerText=costTwo
+    document.getElementById("upgradeTwo").innerText=upgradeT
+    
+ } 
+ else{
+  alert("You  Lie I Know You Touched My Chip")
+    score = 0
+    cost=5
+    click=1
+    costTwo=10
+    speed=0
+    upgradeO=0
+    upgradeT=0
+    waldoC="chip"
+    document.getElementById("cost").innerText=cost
+    document.getElementById("upgrade").innerText=upgradeO
+    document.getElementById("costTwo").innerText=costTwo
+    document.getElementById("upgradeTwo").innerText=upgradeT
+    
+ }
+  console.log(score)
+ document.getElementById("score").innerText=score
+}
   var score = 0
   var cost=5
   var click=1
   var costTwo=10
-  var speed=0
+  var speed =0
   var upgradeO=0
   var upgradeT=0
-
+ var waldoC=false
 </script>
