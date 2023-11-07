@@ -12,33 +12,32 @@
     #waldo{
       width:100px;
       position:absolute;
-      margin-top:-740px;
-      margin-left:200px;
+      margin-top:-650px;
+      margin-left:-1400px;
       transform: rotate(180deg)
     }
-      body {
-       background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
-       -webkit-user-select:hidden;
-        -ms-user-select: none;
-        user-select: none;
-       padding: 10px;
-       font-family: sans-serif;
-       margin-left:-200px;
-     background-repeat: no-repeat;
-      }
-     
-     #score {
-       font-size: 40px;
-       text-align: center;
-       width: fit-content;
-       margin: auto;
-     }
-     #scoreW {
-       font-size: 40px;
-       text-align: center;
+    body {
+      background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+     -webkit-user-select:hidden;
+       -ms-user-select: none;
+      user-select: none;
+     padding: 10px;
+     font-family: sans-serif;
+     margin-left:-200px;
+      background-repeat: no-repeat;
+   }
+   #score {
+      font-size: 40px;
+     text-align: center;
+     width: fit-content;
+     margin: auto;
+   }
+   #scoreW {
+      font-size: 40px;
+     text-align: center;
       
-       width: fit-content;
-       margin: auto;
+      width: fit-content;
+     margin: auto;
      }
      #img {
         margin-top: -100px;
@@ -54,6 +53,7 @@
         color: rgb(250, 248, 248);
         padding: 10px;
         font-family: sans-serif;
+        position:absolute;
       }
       #all-contents {
        max-width: 900px;
@@ -242,7 +242,7 @@
       <img id="waldo" draggable="false" src="https://images.genial.ly/5c704358c21bd04d3cddd063/799ddd6e-8186-4ef1-a089-5ab84ba25610.png">
 
       
-    </body> 
+  </body> 
 </html>
 <script>
   document.getElementById("img").addEventListener("click", addScore)
@@ -258,45 +258,46 @@
   }
  function found(){
  
-if(waldoC===false){
+    if(waldoC===false){
 
-    alert("i see you found me")
-  alert("since this is the first time your talking to me here take some points")
-  alert("hey since you clicked on me i will give a one time chance to awnser my question")
-  var awnser=prompt("what is my shirt color")
-  waldoC=true
-if(awnser==="black"){
-alert("great you got it right")
-alert("yeah my shirt is black and if you say it isnt i will take those tasty points")
-alert("here take the points")
-score=score+1000000000
-document.getElementById("score").innerText=score
-}else{
-  alert("you got it wrong so no points for you")
-  alert("actually if you really thought the color of my shirt was "+awnser+" then you dont derserve points")
-  score=score-1000000000
-document.getElementById("score").innerText=score
-}
-} else 
-if(waldoC===true){
- alert("hey you cant find my twice ive already been found ")
- alert("but since you tried to click on me twice no points for you")
- score=0
- document.getElementById("score").innerText=score
-} else
-if(waldoC==="chip"){
-alert("do you think the lowsy chip god could help you ")
-alert("do you know who i am im waldo ")
-alert("im THE WALDO")
-alert("you know from WHerEs WalDO")
-alert("i AM SUPEIROR")
-score=-9999999999999999999
-document.getElementById("score").innerText=score
-}
- }
+      alert("i see you found me")
+      alert("since this is the first time your talking to me here take some points")
+      alert("hey since you clicked on me i will give a one time chance to awnser my question")
+     var awnser=prompt("what is my shirt color")
+     waldoC=true
+     if(awnser==="black"){
+        alert("great you got it right")
+       alert("yeah my shirt is black and if you say it isnt i will take those tasty points")
+       alert("here take the points")
+       score=score+1000000000
+       document.getElementById("score").innerText=score
+      } 
+      else{
+          alert("you got it wrong so no points for you")
+         alert("actually if you really thought the color of my shirt was "+awnser+" then you dont derserve points")
+         score=score-1000000000
+        document.getElementById("score").innerText=score
+     } 
+    }
+    if(waldoC==="chip"){
+     alert("do you think the lowsy chip god could help you ")
+      alert("do you know who i am im waldo ")
+     alert("im THE WALDO")
+     alert("you know from WHerEs WalDO")
+     alert("i AM SUPEIROR")
+     score=-9999999999999999999
+     document.getElementById("score").innerText=score
+    }
+   if(waldoC===true){
+      alert("hey you cant find my twice ive already been found ")
+      alert("but since you tried to click on me twice no points for you")
+      score=0
+     document.getElementById("score").innerText=score
+   }
+  }
   function upgrade(){
    if(score>=cost){
-    score=score-cost
+      score=score-cost
      cost=cost*2
       click=click+1
       console.log(cost)
@@ -305,70 +306,61 @@ document.getElementById("score").innerText=score
       document.getElementById("upgrade").innerText=upgradeO
     }
   }
-  function upgradeTwo(){
-  
-  if(score>=costTwo){
-    score=score-costTwo
-      costTwo=costTwo*2
+ function upgradeTwo(){ 
+    if(score>=costTwo){
+      score=score-costTwo
+     costTwo=costTwo*2
       console.log(costTwo)
      document.getElementById("costTwo").innerText=costTwo
       setInterval(timeUp, 500) 
       console.log(score)
-      document.getElementById("score").innerText=score
-     
+      document.getElementById("score").innerText=score  
       upgradeT=upgradeT+1
       document.getElementById("upgradeTwo").innerText=upgradeT  
       speed=click
    }
-    }
-   
+ }
   function timeUp() {
-  
     score = score + speed
     document.getElementById("score").innerText = score
-    
   }
   function chipGod() {
     clearInterval()
-  var chip=confirm("Did  You  Touch  My  Chip")
- if(chip===true){
-  alert("Dont Touch My Chip")
-  score = 0
-   cost=5
-    click=1
-    costTwo=10
-    speed=0
-    upgradeO=0
-    upgradeT=0
-    document.getElementById("cost").innerText=cost
-    document.getElementById("upgrade").innerText=upgradeO
-    document.getElementById("costTwo").innerText=costTwo
-    document.getElementById("upgradeTwo").innerText=upgradeT
-    if (waldo===true){
-      waldo="chip"
-    }
-    
- } 
- else{
-  alert("You  Lie I Know You Touched My Chip")
-    score = 0
-    cost=5
-    click=1
-    costTwo=10
-    speed=0
-    upgradeO=0
-    upgradeT=0
-   document.getElementById("cost").innerText=cost
-    document.getElementById("upgrade").innerText=upgradeO
-    document.getElementById("costTwo").innerText=costTwo
-    document.getElementById("upgradeTwo").innerText=upgradeT
-    if (waldo===true){
-      waldo="chip"
-    }
- }
-  console.log(score)
- document.getElementById("score").innerText=score
-}
+    var chip=confirm("Did  You  Touch  My  Chip")
+    if(chip===true){
+     alert("Dont Touch My Chip")
+      score = 0
+      cost=5
+      click=1
+      costTwo=10
+      speed=0
+      upgradeO=0
+      upgradeT=0
+      document.getElementById("cost").innerText=cost
+      document.getElementById("upgrade").innerText=upgradeO
+      document.getElementById("costTwo").innerText=costTwo
+      document.getElementById("upgradeTwo").innerText=upgradeT
+    } 
+    else{
+      alert("You  Lie I Know You Touched My Chip")
+      score = 0
+      cost=5
+      click=1
+      costTwo=10
+      speed=0
+      upgradeO=0
+      upgradeT=0
+      document.getElementById("cost").innerText=cost
+      document.getElementById("upgrade").innerText=upgradeO
+      document.getElementById("costTwo").innerText=costTwo
+      document.getElementById("upgradeTwo").innerText=upgradeT
+   }
+   if (waldoC===true){
+     waldoC="chip"
+      console.log(score)
+     document.getElementById("score").innerText=score
+   }
+  }
   var score = 0
   var cost=5
   var click=1
