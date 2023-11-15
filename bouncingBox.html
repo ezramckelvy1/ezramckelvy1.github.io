@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #fast{
+                position:absolute;
+                height:150px;
+                width:150px;
+                background-color:rgb(95, 84, 84);
+                border-color: black;
+                border-width: 10px;
+            }
+
+            #box{
+                position:relative;
+            
+              
+                
+            }
+       
+        body{
+            background-color: white;
+            width:100vh;
+            height: 100vh;
+            border-color: #000000;
+            border-width:200px;
+            overflow: hidden;
+        }
+        img{
+            width:100px;
+        }
+        </style>
+    </head>
+    <body>
+
+        <div id="fast"></div>
+       
+        
+             <div id="box">
+
+              <img id="img" src="dvd-xxl (2).png">
+             </div>
+
+        
+    </body>
+    <script>
+         document.getElementById("fast").addEventListener("click", movei)
+        function color(){
+            var num 
+            num=Math.floor(Math.random() * 11);
+           
+            if(num===1) {
+           document.getElementById("img").src="dvd-xxl (1).png"
+           }
+           if(num===1) {
+           document.getElementById("img").src="dvd-xxl (2).png"
+           }
+           if(num===3) {
+           document.getElementById("img").src="dvd-xxl (3).png"
+           }
+           if(num===4) {
+           document.getElementById("img").src="dvd-xxl.png"
+            }
+           if(num===5) {
+           document.getElementById("img").src="dvd-xxl (4).png"
+           }
+           if(num===6) {
+           document.getElementById("img").src="dvd-xxl (5).png"
+           }
+           if(num===7) {
+           document.getElementById("img").src="dvd-xxl (6).png"
+           }
+           if(num===8) {
+           document.getElementById("img").src="dvd-xxl (7).png"
+           }
+           if(num===9) {
+           document.getElementById("img").src="dvd-xxl (8).png"
+           }
+           if(num===10) {
+           document.getElementById("img").src="dvd-xxl (9).png"
+           }
+           
+        }
+        
+         function movei(){ 
+           
+            speed =speed-100
+           setInterval(move,speed)
+    
+        }
+        
+         function move(){
+           if(X>=screenW){
+            posx=-1
+        color()
+           }
+           if(Y>=screenH){
+            posy=-1
+            color()
+           }
+           if(Y<=0){
+            posy=1
+            color()
+           }
+            if(X<=0){
+            posx=1
+            color()
+           }
+            X=X+posx
+            Y=Y+posy
+
+         document.getElementById("box").style.left=X+"px";
+         document.getElementById("box").style.top=Y+"px";
+        }
+        
+       var posx=0
+       var posy=0
+        var X=0
+        var Y=0
+        var speed=500
+        var screenH=window.innerHeight
+        var screenW=window.screen.width
+    </script>
+</html>
