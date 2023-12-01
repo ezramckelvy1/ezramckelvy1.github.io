@@ -2,13 +2,14 @@
 <html>
     <head>
         <style>
+            
+
             #fast{
                 position:absolute;
-                height:150px;
-                width:150px;
-                background-color:rgb(95, 84, 84);
-                border-color: black;
-                border-width: 10px;
+                height:20vh;
+                width:20vh;
+                background-color:rgb(145, 94, 94);
+               
             }
 
             #box{
@@ -24,10 +25,14 @@
             height: 100vh;
             border-color: #000000;
             border-width:200px;
-            overflow: hidden;
+            overflow:hidden;
         }
         img{
-            width:100px;
+            position:sticky;
+            width:10vh;
+           top: 0;
+         left:0;
+
         }
         </style>
     </head>
@@ -44,8 +49,9 @@
         
     </body>
     <script>
-         document.getElementById("fast").addEventListener("click", movei)
-        function color(){
+
+     setInterval(move,speed)
+         function color(){
             var num 
             num=Math.floor(Math.random() * 11);
            
@@ -82,12 +88,7 @@
            
         }
         
-         function movei(){ 
-           
-            speed =speed-100
-           setInterval(move,speed)
-    
-        }
+        
         
          function move(){
            if(X>=screenW){
@@ -98,11 +99,11 @@
             posy=-1
             color()
            }
-           if(Y<=0){
+           if(Y<=10){
             posy=1
             color()
            }
-            if(X<=0){
+            if(X<=10){
             posx=1
             color()
            }
@@ -117,8 +118,8 @@
        var posy=0
         var X=0
         var Y=0
-        var speed=500
+        var speed=600
         var screenH=window.innerHeight
-        var screenW=window.screen.width
+        var screenW=window.outerWidth
     </script>
 </html>

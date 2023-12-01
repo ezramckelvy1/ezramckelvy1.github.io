@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+        background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+        color: rgb(250, 248, 248);
+        padding: 10px;
+        font-family: sans-serif;
+        position:absolute;
+        overflow: hidden;
+      
+      }
+               #finish{
+                transform: rotate(90deg);
+                position:absolute;
+                left: 410px;
+               }
+            #car2{
+                user-select: none;
+                width:auto;
+                height:400px;
+               position:absolute;
+            }
+            #car1{
+                user-select: none;
+                height:400px;
+                width:auto;
+                position:absolute;
+                
+            }
+            #line{
+                border-color:rgb(253, 229, 7);
+                border-width: 4px;
+                border-style: dashed;
+               
+                width:1300px;
+                height: 0px;
+                top:450px;
+                position: absolute;
+            
+                
+            }
+           
+            #p2w{
+              opacity: 0;
+                border-width: 10px;
+                border-color: black;
+                border-style: dashed;
+                left:500px;
+               top:150px;
+                height: 400px;
+                width: 600px;
+                background-color: rgb(255, 0, 0);
+                position:absolute;
+                font-size: 100px;
+                text-align: center;
+            }
+            #p1w{
+                opacity:0;
+                border-width: 10px;
+                border-color: black;
+                border-style: dashed;
+                left:500px;
+               top:150px;
+                height: 400px;
+                width: 600px;
+                background-color: rgb(255, 0, 0);
+                position:absolute;
+                font-size: 100px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="race">
+            <img id="car1" draggable="false" src="waldo.png">
+           <div id="line">
+          
+            <img id="car2" draggable="false" src="Titansub.png">
+            <img id="finish" src="https://freepngimg.com/thumb/finish_line/26669-1-finish-line-hd.png">
+        </div>
+        
+        
+           <p id="p1w">Player1 wins press "Space"
+           </p>
+            <p id="p2w">player2 wins press "Space"
+            </p>
+           
+    </body>
+</html>
+<script>
+    document.addEventListener("keyup",car1)
+   document.addEventListener("keyup",car2)
+document.addEventListener("keydown",sp)
+  function sp(e){ if(e.key===" "){
+    space=false
+    document.getElementById("p1w").style.opacity=0;
+    document.getElementById("p2w").style.opacity=0;
+    
+}}
+
+   
+    function car1(e){
+        if(space===false){
+        if(e.key==="a"){
+      bell.pause();
+      bell.load();
+        one=one+14.57
+       
+    bell.play();
+    
+    if(one>=1020){
+        document.getElementById("p1w").style.opacity=1;
+        two=0
+        one=0
+        
+        space=true
+    }
+    document.getElementById("car1").style.left=one+"px";
+    document.getElementById("car2").style.left=two+"px";
+    }
+if(e.key===" "){
+    space=false
+    document.getElementById("p1w").style.opacity=0;
+    document.getElementById("p2w").style.opacity=0;
+    
+}}}
+   
+    function car2(e){
+        if(space===false){
+     if(e.key==="l"){ 
+     
+      ex.pause();
+       ex.load();
+        two=two+10
+        
+        ex.play();
+        if(two>=700){
+         document.getElementById("p2w").style.opacity=1;
+            two=0
+            one=0
+            space=true
+        }}
+        document.getElementById("car2").style.left=two+"px";
+        document.getElementById("car1").style.left=one+"px";
+   
+    }}
+    
+   
+  var one=0
+    var two=0
+    var ex= new Audio("wallhit.mp3")
+    var bell=new Audio("taco-bell-bong-sfx.mp3")
+    var space =false
+</script>

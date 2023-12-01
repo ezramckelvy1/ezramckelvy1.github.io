@@ -252,9 +252,12 @@
   document.getElementById("waldo").addEventListener("click",found)
   
   function addScore() {
+    ex.pause();
+    ex.load();
     score = score+click
     console.log(score)
     document.getElementById("score").innerText=score
+    ex.play();
   }
  function found(){
  
@@ -369,4 +372,5 @@
   var upgradeO=0
   var upgradeT=0
  var waldoC=false
+ var ex= new Audio("wallhit.mp3")
 </script>
