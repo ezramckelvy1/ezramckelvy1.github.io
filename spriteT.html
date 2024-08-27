@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="spriteCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('spriteCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set the canvas size to the desired sprite size
+    canvas.width = 256;
+    canvas.height = 297;
+
+    // Define the sprite frames
+    const spriteFrames = [
+      { x: 0, y: 0, width: 100, height: 100 },
+      { x: 100, y: 0, width: 100, height: 100 },
+      { x: 200, y: 0, width: 100, height: 100 },
+      // Add more frames as needed
+    ];
+
+    // Set the current frame index
+    let frameIndex = 0;
+
+    // Set the frame duration in milliseconds
+    const frameDuration = 100;
+
+    // Function to draw the current frame
+    function drawFrame() {
+      const frame = spriteFrames[frameIndex];
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(spriteFrames[frameIndex].image, frame.x, frame.y, frame.width, frame.height, 0, 0, canvas.width, canvas.height);
+    }
+
+    // Function to update the frame index
+    function updateFrame() {
+      frameIndex = (frameIndex + 1) % spriteFrames.length;
+    }
+
+    // Load the sprite image and start the animation loop
+    const spriteImage = new Image();
+    spriteImage.src = Sprite.png; // Replace with the path to your sprite image
+    spriteImage.onload = () => {
+  console.log('Image loaded');
+  setInterval(() => {
+    drawFrame();
+    updateFrame();
+  }, frameDuration);
+};
+
+  </script>
+</body>
+</html>
