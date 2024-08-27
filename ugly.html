@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+body{
+   background-color: aqua;
+}
+p{
+   background-color:transparent;
+}
+   </style>
+
+</head>
+
+<body>
+   <p>"Just Use W,A,S,D"</p>
+   <canvas id="canvas" width="3000" height="3000">
+
+   </canvas>
+   <img hidden id="source" hidden src="Darouse_Sprite.png">
+</body>
+<script>
+   var x = 0
+   var y = 0
+   var way = 1
+   var wayTwo = 1
+   var imgT = 1
+   var canvas = document.getElementById("canvas")
+   var ctx = canvas.getContext("2d")
+
+   const image = document.getElementById("source");
+   var w = window.innerWidth;
+   var h = window.innerHeight;
+   document.addEventListener("keydown", main)
+   setInterval(main, 50)
+   setInterval(main, 50)
+   function up() {
+      ctx.clearRect(0,0,3000,3000)
+      imT=1
+      if (imgT === 1) {
+         imgT = 2
+         
+         ctx.drawImage(image, 64, 0, 64, 64, x, y, 300, 300)
+      }
+      else if (imgT === 2) {
+         imgT = 3
+         
+         ctx.drawImage(image, 64, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 3) {
+         imgT = 4
+         
+         ctx.drawImage(image, 128, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 4) {
+         imgT = 5
+       
+         ctx.drawImage(image, 192, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 5) {
+         imgT = 6         
+         
+         ctx.drawImage(image, 256, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 6) {
+         imgT = 7
+         
+         ctx.drawImage(image, 320, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 7) {
+         imgT = 8
+         
+         ctx.drawImage(image, 384, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 8) {
+         imgT= 9
+         
+         ctx.drawImage(image, 448, 0, 64, 64, x, y, 300, 300)
+      } else if (imgT === 9) {
+         imgT = 1
+         
+         ctx.drawImage(image, 512, 0, 64, 64, x, y, 300, 300)
+      }
+   }
+   function left() {
+      ctx.clearRect(0,0,3000,3000)
+      imT=1
+      if (imgT === 1) {
+         imgT = 2
+         ctx.drawImage(image, 0, 64, 64, 64, x, y, 300, 300)
+      }
+      else if (imgT === 2) {
+         imgT = 3
+         ctx.drawImage(image, 64, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 3) {
+         imgT = 4
+         ctx.drawImage(image, 128, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 4) 
+      {
+         imgT = 5
+         ctx.drawImage(image, 192, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 5) {
+         imgT = 6
+         ctx.drawImage(image, 256, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 6) {
+         imgT = 7
+         ctx.drawImage(image, 320, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 7) {
+         imgT = 8
+         ctx.drawImage(image, 384, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 8) {
+         imgT = 9
+         ctx.drawImage(image, 448, 64, 64, 64, x, y, 300, 300)
+      } else if (imgT === 9) {
+         imgT = 1
+         ctx.drawImage(image, 512, 64, 64, 64, x, y, 300, 300)
+      }
+   }
+   function down() {
+      ctx.clearRect(0,0,3000,3000)
+      imT=1
+      if (imgT === 1) {
+         imgT = 2
+         ctx.drawImage(image, 0, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 2) {
+         imgT = 3
+         ctx.drawImage(image, 64, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 3) {
+         imgT = 4
+         ctx.drawImage(image, 128, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 4) {
+         imgT = 5
+         ctx.drawImage(image, 192, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 5) {
+         imgT = 6
+         ctx.drawImage(image, 256, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 6) {
+         imgT = 7
+         ctx.drawImage(image, 320, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 7) {
+         imgT = 8
+         ctx.drawImage(image, 384, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 8) {
+         imgT = 9
+         ctx.drawImage(image, 448, 128, 64, 64, x, y, 300, 300)
+      } else if (imgT === 9) {
+         imgT = 1
+         ctx.drawImage(image, 512, 128, 64, 64, x, y, 300, 300)
+      }
+   }
+   function right() {
+      ctx.clearRect(0,0,3000,3000)
+imT=1
+      if (imgT === 1) {
+         imgT = 2
+         ctx.drawImage(image, 0, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT === 2) {
+         imgT = 3
+         ctx.drawImage(image, 64, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT === 3) {
+         imgT = 4
+         ctx.drawImage(image, 128, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT === 4) {
+         imgT = 5
+         ctx.drawImage(image, 192, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT === 5) {
+         imgT = 6
+         ctx.drawImage(image, 256, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT === 6) {
+         imgT = 7
+         ctx.drawImage(image, 320, 192, 64, 64, x, y, 300, 300)
+      }
+      else if (imgT === 7) {
+         imgT = 8
+         ctx.drawImage(image, 384, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT === 8) {
+         imgT = 9
+         ctx.drawImage(image, 448, 192, 64, 64, x, y, 300, 300)
+      } else if (imgT ===9) {
+         imgT = 1
+         ctx.drawImage(image, 512, 192, 64, 64, x, y, 300, 300)
+      }
+      
+   }
+   function main(e) {
+
+      
+      if (e.key === "w") {
+        
+         y = y - 15
+         up()
+
+
+      }
+      if (e.key === "a") {
+         x = x - 15
+         left()
+      } if (e.key === "s") {
+         y = y + 15
+         down()
+      } if (e.key === "d") {
+         x = x + 15
+         right()
+      }
+      
+
+
+
+   }
+
+
+</script>
+
+</html>
