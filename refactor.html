@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bouncing Box Refactored</title>
+	<style>
+		#box {
+			width: 70px;
+			height: 70px;
+			background-color:black;
+			font-size: 300%;
+			display: block;
+			position: absolute;
+			top: 100px;
+			left: 0px;
+		}
+		body{
+			height: 90vh;
+			width: 100vw;
+			overflow: hidden;
+		}
+	</style>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body id="board">
+	<!-- HTML for the box -->
+	<div id="box"></div>
+
+	<script>
+		/* global $ */
+		'use strict'
+		$(document).ready(function(){
+			//////////////////////////////////////////////////////////////////
+			/////////////////// EXAMPLE HEADER ///////////////////////////////
+			//////////////////////////////////////////////////////////////////
+
+			var BOARD_WIDTH = $('#board').width();	// Number: the maximum X-Coordinate of the screen
+			var BOARD_HEIGHT = $('#board').height();	
+			// Every 50 milliseconds, call the update Function (see below)
+		
+
+			
+			var boxObj={
+                x:0,
+                y:100,
+                left:10,
+                down:10,
+
+			}
+              setInterval(go, 50);
+			/* 
+			This Function will be called 20 times/second. Each time it is called,
+			it should move the Box to a new location. If the box drifts off the screen
+			turn it around! 
+			*/
+			function go() {
+				boxObj.x += boxObj.left;
+				boxObj.y += boxObj.down;
+				border()
+				$('#box').css("top", boxObj.y);
+				$('#box').css("left", boxObj.x);
+				
+				
+			}
+			function border(){
+				if (boxObj.x > BOARD_WIDTH) {
+					boxObj.left = -boxObj.left;
+				}
+				else if (boxObj.x < 0) {
+					boxObj.left = -boxObj.left;
+				}
+				if (boxObj.y > BOARD_HEIGHT) {
+					boxObj.down = -boxObj.down;
+				}
+				else if (boxObj.y < 0) {
+					boxObj.down = -boxObj.down;
+				}
+
+			}
+
+			
+
+
+		}); 
+	</script>
+</body>
+</html>
