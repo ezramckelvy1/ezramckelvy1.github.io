@@ -61,9 +61,7 @@ $(document).ready(function () {
 
   // TODO 3-a: add a function that handles the static display type
   function handleStatic(data){
-   
-
-    setBackgroundWithObject(data)
+   setBackgroundWithObject(data)
     animationDetails.displayType=1
 
   }
