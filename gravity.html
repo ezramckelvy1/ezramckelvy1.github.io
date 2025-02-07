@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: pixel;
+            src: url(Tiny5-Regular.ttf);
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #background {
+            width: 200%;
+            height: 200%;
+            left: -1px;
+            top: 325px;
+            background-image: url("https://ps.w.org/dinosaur-game/assets/banner-1544x500.png?rev=2030297");
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+
+        #player {
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+
+        }
+
+        #block {
+            top: 0px;
+            left: 0px;
+            width: 20px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+
+        }
+
+        #score {
+            font-family: pixel;
+            font-size: 50px;
+            right: 20px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="background"></canvas>
+    <canvas id="player"></canvas>
+    <canvas id="block"></canvas>
+    <p id="score">Score: 0</p>
+
+</body>
+<script>
+    let floor = (window.innerHeight - 150)
+    const player = {
+        x: (window.innerWidth / 2) - 50,
+        y: floor,
+        speedY: 0,
+        jump: false,
+        jumping: false,
+        score: -1,
+        width: 50,
+        height: 100,
+        small: false,
+        shrink: 0,
+    }
+    const block = {
+        x: 0,
+        y: floor,
+        width: 20,
+        height: 50,
+    }
+    gravity = 1
+    jumpStrenght = 5
+    document.addEventListener("keydown", keyPressed)
+    document.addEventListener("keyup", keyUp)
+
+    setInterval(gameRun, 1)
+    function gameRun() {
+        playerMove()
+        blockMove()
+        collision()
+    }
+    function playerMove() {
+        playerSize()
+    
+        playerJump()
+        Gravity()
+        player.y = player.y + player.speedY
+        if(player.y > floor){
+            player.speedY = 0
+            player.y = floor
+        }
+        playerPos()
+
+    }
+    function keyUp(e) {
+        if (e.key === "w") {
+            player.jump = false
+        }
+        if (e.key === "s") {
+            player.small = false
+        }
+        if (e.key === " ") {
+            player.jump = false
+        }
+        if (e.key === "Shift") {
+            player.small = false
+        }
+    }
+    function keyPressed(e) {
+        if (e.key === "w") {
+            player.jump = true
+            playerJump()
+        }
+        if (e.key === "s") {
+            player.small = true
+        }
+        if (e.key === " ") {
+            player.jump = true
+        }
+        if (e.key === "Shift") {
+            player.small = true
+        }
+    }
+
+
+    function playerJump() {
+     
+            
+        player.speedY = -jumpStrenght
+    
+}
+    function playerSize() {
+        if (player.small) {
+            if (player.shrink === 0) {
+                player.y = player.y + 50
+            }
+            player.shrink = 50
+            player.height = 50
+
+
+        } else {
+            if (player.shrink === 50) {
+                player.y = floor
+            }
+            player.shrink = 0
+            player.height = 100
+        }
+
+        document.getElementById("player").style.height = player.height + "px"
+    }
+    function playerPos() {
+        document.getElementById("player").style.left = player.x + "px"
+        document.getElementById("player").style.top = player.y + "px"
+    }
+
+    function Gravity() {
+        console.log(player.speedY)
+        player.speedY -= gravity
+        console.log(player.y)
+    }
+    function levels() {
+        if (player) {
+
+        }
+    }
+    function blockMove() {
+        blockRun()
+        blockPos()
+    }
+    function blockPos() {
+        document.getElementById("block").style.left = block.x + "px"
+        document.getElementById("block").style.top = block.y + "px"
+        document.getElementById("block").style.width = block.width + "px"
+        document.getElementById("block").style.height = block.height + "px"
+    }
+    function blockRun() {
+
+        block.x = block.x - 2
+        if (block.x < -50) {
+            block.x = window.innerWidth - 50
+            const randomNumber = Math.floor(Math.random() * 2) + 1;
+            if (randomNumber === 1) {
+                block.height = 20
+                block.width = 40
+                block.y = floor + 30
+
+
+            }
+            if (randomNumber === 2) {
+                const randomNumberTwo = Math.floor(Math.random() * 2) + 1;
+                block.height = 50
+                if (randomNumberTwo === 1) {
+                    block.width = 30
+                }
+                if (randomNumberTwo === 2) {
+                    block.width = 60
+                }
+                if (randomNumberTwo === 3) {
+                    block.width = 90
+                }
+                block.y = floor + 50
+            }
+            player.score = player.score + 1
+            document.getElementById("score").innerText = "Score: " + player.score
+        }
+    }
+    function collision() {
+        // if (player.x <= block.x + block.width &&
+        //     player.x + player.width >= block.x &&
+        //     player.y <= block.y + block.height &&
+        //     player.y + player.height >= block.y) {
+        //     block.x = window.innerWidth - 50
+        //    // alert("your Score is " + player.score)
+        //     player.score = 0
+        //     document.getElementById("score").innerText ="Score: "+player.score
+        //     player.small=false
+
+        // }
+
+
+    }
+</script>
+
+</html>
