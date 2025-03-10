@@ -32,6 +32,7 @@ applyFilter()
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+//applys the filter
  function applyFilter(){
   for(var i =0; i<image.length;i++){
     for(var j =0; j<image[i].length;j++){
