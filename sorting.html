@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sorting</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="900" height="500"> </canvas>
+</body>
+
+</html>
+<script>
+    var canvas = document.getElementById("canvas")
+    var ctx = canvas.getContext("2d")
+
+    var length = 80
+    var speedOfReplay = 50
+    var textPadding = 3
+
+    var listToSort = makeRandomList(length)
+    var sortedList = listToSort
+
+    // sortNumbers(quickSort(listToSort))
+    sortedList = quickSort(listToSort)
+    showCurrentSort(sortedList)
+
+    function quickSort(list) {
+        if(!list.length){
+               return list
+            }
+        showCurrentSort(list)
+        var piv = list[0]
+        var big = []
+        var small = []
+        for (var i = 1; i < list.length; i++) {
+           
+            if (list[i] >= piv) {
+                big.push(list[i])
+                console.log("big "+big)
+                
+            } else {
+                small.push(list[i])
+                console.log("small "+small)
+            }
+        }
+       
+        showCurrentSort(small)
+        showCurrentSort(big)
+        var sorted = quickSort(small)
+        sorted.push(piv)
+        sorted=sorted.concat(quickSort(big))
+        showCurrentSort(sorted)
+        console.log(sorted)
+        return sorted
+
+
+    }
+
+    function sortNumbers() {
+        //put your code here
+        var swap = false
+        while (!swap) {
+            swap = true
+            for (var i = 0; i < listToSort.length; i++) {
+                showCurrentSort(sortedList, i)
+
+
+                if (listToSort[i] > listToSort[i + 1]) {
+                    var current = listToSort[i]
+                    listToSort[i] = listToSort[i + 1]
+                    listToSort[i + 1] = current
+                    swap = false
+                }
+
+
+            }
+        }
+        console.log(listToSort)
+        //this exists so you can see the result of the quick sort.
+    }
+
+
+    function showCurrentSort(currentList, currentIndex) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        var widthOfBars = (canvas.width - 10) / length
+        var heightOfBars = (canvas.height - 10) / length
+        for (let i = 0; i < currentList.length; i++) {
+            ctx.fillStyle = "hsl(" + (currentList[i] * (360 / length)) + ",100%,50%)"
+            if (i === currentIndex) {
+                ctx.fillStyle = "black"
+            }
+            ctx.fillRect(i * widthOfBars, canvas.height - (currentList[i] * heightOfBars), widthOfBars, currentList[i] * heightOfBars)
+            ctx.fillText(currentList[i], i * widthOfBars, canvas.height - (currentList[i] * heightOfBars) - textPadding)
+        }
+    }
+
+    function makeRandomList(lengthOfList) {
+        var listOfAllNumbers = []
+        var randomList = []
+        for (let i = 0; i < lengthOfList; i++) {
+            listOfAllNumbers.push(i) //this makes a list of every number between 0 and lengthOfList
+        }
+
+        var randomIndex
+        while (listOfAllNumbers.length > 0) { //while there are still numbers in the listOfAllNumbers
+            randomIndex = Math.floor(Math.random() * listOfAllNumbers.length) //grab one of the numbers from ListOfAllNumbers
+            randomList.push(listOfAllNumbers[randomIndex])//put that number in the randomNumbers list
+            listOfAllNumbers.splice(randomIndex, 1) //remove the number from the list of all numbers
+            // at the end of this operation you end up with a list of numbers from 0 to lengthOfList where none of the numbers repeat. 
+        }
+        return randomList
+    }
+
+
+
+</script>
